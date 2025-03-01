@@ -1,32 +1,32 @@
 
 import type { LevelDesc } from "../testlevel";
-import type { Point } from "./types";
+import type { Point2D } from "./geometry";
 
-const defaultTile = {
+const defaultTile = () => ({
     texture: 0, 
     passable: false
-}
+})
 
-export default class Level {
-    #level
+export class Level {
+    #level: LevelDesc
     constructor(level: LevelDesc) {
         this.#level = level
     }
 
     get level() { return this.#level }
 
-    inBounds(tile:Point):boolean {
+    inBounds(tile:Point2D): boolean {
         return (
             tile.x >= 0 && tile.x < this.#level.width &&
             tile.y >= 0 && tile.y < this.#level.height
         )
     }
 
-    getTile(tile:Point) {
-        if (!this.inBounds(tile)) return defaultTile
+    getTile(tile:Point2D) {
+        if (!this.inBounds(tile)) return defaultTile()
         return this.#level.tiles[tile.y][tile.x]
     }
-    getPassable(tile:Point) {
+    getPassable(tile:Point2D): boolean {
         if (!this.inBounds(tile)) return false
         return this.#level.tiles[tile.y][tile.x].passable
     }
