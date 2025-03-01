@@ -1,6 +1,6 @@
 
 <script setup lang="ts">
-  import { Level } from '@/types'
+  import { Level } from './types'
   import testLevel from './testlevel'
   import Block from './components/Block.vue'
 
