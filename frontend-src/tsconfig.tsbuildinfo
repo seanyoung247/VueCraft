@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/testlevel.ts","./src/vite-env.d.ts","./src/composables/usePoint.ts","./src/types/geometry.ts","./src/types/index.ts","./src/types/level.ts","./src/App.vue","./src/components/Block.vue","./src/components/HelloWorld.vue"],"errors":true,"version":"5.7.3"}
