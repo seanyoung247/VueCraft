@@ -10,7 +10,7 @@
 
 <template>
   <div class="view3d">
-    <block/>
+    <Block :size="200"/>
   </div>
 </template>
 

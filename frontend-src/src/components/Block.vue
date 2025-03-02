@@ -11,7 +11,7 @@
     import { computed } from "vue"
 
     const props = defineProps({
-        size: { type: Number, default: 200 },
+        size: { type: Number, default: 100 },
         faces: { type: Array<string>, default: () => [
             "front", "back", "left", "right", "top", "bottom"
         ] }
@@ -42,12 +42,14 @@
         border: 1px solid black;
     }
 
-    .block > .face.front { transform: rotateY(0deg) translateZ(var(--offset)); }
+    .block > .face.front { transform: rotateY(0deg) translateZ(var(--offset)); 
+        background: red url(vite.svg) no-repeat center/75%;
+    }
     .block > .face.back { transform: rotateY(180deg) translateZ(var(--offset)); }
     .block > .face.left { transform: rotateY(90deg) translateZ(var(--offset)); }
     .block > .face.right { transform: rotateY(270deg) translateZ(var(--offset)); }
     .block > .face.top { transform: rotateX(90deg) translateZ(var(--offset)); }
-    .block > .face.bottom { transform: rotateX(180deg) translateZ(var(--offset)); }
+    .block > .face.bottom { transform: rotateX(270deg) translateZ(var(--offset)); }
 
     @keyframes test-rotate {
         from {
