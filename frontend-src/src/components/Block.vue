@@ -34,12 +34,16 @@
         animation: test-rotate 5s infinite linear;
     }
 
+    .block:hover > .face {
+        border: 1px solid black;
+    }
+
     .block > .face {
         position: absolute;
         inset: 0;
         background: red;
-        opacity: 0.75;
-        border: 1px solid black;
+        /* opacity: 0.75; */
+        /* border: 1px solid black; */
     }
 
     .block > .face.front { transform: rotateY(0deg) translateZ(var(--offset)); 
